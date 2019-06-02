@@ -10,8 +10,10 @@
   </head>
 
   <body>
+
+    <!-- conditions for alert notifications -->
     <% if flash[:notice] %>
-      <div class="notification is-info global-notification">
+      <div class="notification is-link global-notification">
         <p class="notice"><%= notice %></p>
       </div>
     <% end %>
@@ -21,11 +23,14 @@
       </div>
     <% end %>
 
+    <!--Twitter logo -->
     <nav class="navbar is-info">
       <div class="navbar-brand">
       <%= link_to root_path, class: "navbar-item" do %>
-        <h1 class="title is-5">Twitter Inc.</h1>
+        <h1 class="title is-3"> <i class="fab fa-twitter"></i> Twitter Inc.</h1>
       <% end %>
+
+      <!-- will have new tweet, sign up/in as targets  -->
       <div class="navbar-burger burger" data-target="navbarExample">
           <span></span>
           <span></span>
@@ -37,16 +42,21 @@
         <div class="navbar-end">
           <div class="navbar-item">
           <div class="field is-grouped">
+            
+            <!-- will only allow you to create a new tweet if you have an account -->
+            <% if user_signed_in? %>
             <p class="control">
               <%= link_to 'New Tweet', root_path, class: "button is-info is-inverted" %>
             </p>
+            <% end %>
+            
+            <!-- Logout if signed in-->
             <% if user_signed_in? %>
-             <p class="control">
-                <%= link_to current_user.name, edit_user_registration_path, class: "button is-info" %>
-              </p>
-              <p>
+             <p>
                 <%= link_to "Logout", destroy_user_session_path, method: :delete, class:"button is-info" %>
               </p>
+
+            <!-- if not signed in/up -->
             <% else %>
             <p class="control">
               <%= link_to 'Sign In', new_user_session_path, class: "button is-info" %>

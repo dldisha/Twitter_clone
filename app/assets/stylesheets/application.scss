@@ -14,4 +14,22 @@
  *= require_self
  */
 
-@import "bulma";
+ @import "bulma";
+ @import "font-awesome";
+ @import "font-awesome-sprockets";
+
+.navbar-brand .title {
+	color: white;
+}
+
+
+//round images
+.image {
+	border-radius: 50%;
+	img {
+		border-radius: 50%;
+	}
+}
+.notification:not(:last-child) {
+	margin-bottom: 0;
+}
