@@ -53,7 +53,7 @@ gem 'simple_form'
 gem 'gravatar_image_tag', '~> 1.2'
 
 #flexible authentication for rails
-gem 'devise', '~> 4.3'
+gem 'devise', '~> 4.7'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
