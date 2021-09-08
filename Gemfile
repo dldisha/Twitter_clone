@@ -76,7 +76,7 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   
   #replaces the standard Rails error page with a much better and more useful error page
-  gem 'better_errors', '~> 2.4'
+  gem 'better_errors', '~> 2.8'
 
   #automaically reloads the browser when the views are changed 
   gem 'guard', '~> 2.14', '>= 2.14.1'
